@@ -6,6 +6,7 @@ function getDistricts(){
         {lat: 40.4351075, lng: -3.6887196}, //Monumento a Emilio Castelar
         {lat: 40.4330838, lng: -3.6887263}, //Ruben Darío
         {lat: 40.4250743, lng: -3.6903732}, //Colón
+        {lat: 40.4277602, lng: -3.6957562}, //Alonso Martinez
         {lat: 40.4288781, lng: -3.7022974}, //Bilbao
         {lat: 40.4294542, lng: -3.7058214}, //San Bernardo
         {lat: 40.4312285, lng: -3.7171189}, //Arguelles
@@ -23,7 +24,13 @@ function getDistricts(){
     return chamberi
 }
 
-function paint(){
+function initMap() {
+    let distritos = getDistricts();
+    var madrid = {lat: 40.416775, lng: -3.703790};
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: madrid
+    });
     //Antes de pintar calcular los accidentes y establecer color
     let chamberiPinta = new google.maps.Polygon({
         path: distritos,
@@ -35,12 +42,4 @@ function paint(){
     });
     chamberiPinta.setMap(map);
 }
-function initMap() {
-    let distritos = getDistricts();
-    var madrid = {lat: 40.416775, lng: -3.703790};
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
-        center: madrid
-    });
-    
-}
+
