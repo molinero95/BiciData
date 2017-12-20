@@ -1,4 +1,5 @@
 function getDistricts(){
+    let distritos = [];
     let chamberi = [
         {lat: 40.4461822, lng: -3.6913631}, //Castellana con Joaquín Costa
         {lat: 40.4411563, lng: -3.6919231}, //Plz San Juan de la Cruz
@@ -21,7 +22,35 @@ function getDistricts(){
         {lat: 40.4469749, lng: -3.7093029}, //Reina Victoria curva
         {lat: 40.4461822, lng: -3.6913631} //Vuelta
     ];
-    return chamberi
+    distritos.push(chamberi);
+    let nuevosMinisterios = [
+        {lat: 40.4462073, lng: -3.6912829}, //Nuevos Ministerios
+        {lat: 40.4470462, lng: -3.7083913}, //Hospital Cruz Roja
+        {lat: 40.4523766, lng: -3.7117199}, //Jefatura Superior de Policia Nacional
+        {lat: 40.4530123, lng: -3.7133721}, //Calle Numancia
+        {lat: 40.4538879, lng: -3.7127794}, //Calle Numancia con av Pablo Iglesias
+        {lat: 40.4551737, lng: -3.7131683}, //Curva Pablo Iglesias
+        {lat: 40.4622533, lng: -3.7083296}, //Ofelia Nieto
+        {lat: 40.4642287, lng: -3.7093381}, //Calle Villaamil
+        {lat: 40.4656905, lng: -3.7104368}, //Calle Villaamil rotonda
+        {lat: 40.4683599, lng: -3.7133185}, //Sinesio Delgado curva
+        {lat: 40.4709074, lng: -3.7117574}, //Sinesio Delgado curva
+        {lat: 40.4720276, lng: -3.7038315}, //Sinesio Delgado curva
+        {lat: 40.4748255, lng: -3.7006464}, //Sinesio Delgado curva
+        {lat: 40.4749609, lng: -3.6994624}, //Sinesio Delgado curva
+        {lat: 40.4744949, lng: -3.6974073}, //Sinesio Delgado curva
+        {lat: 40.4747362, lng: -3.6957706}, //Sinesio Delgado curva
+        {lat: 40.4744983, lng: -3.6940098}, //Sinesio Delgado curva
+        {lat: 40.4746939, lng: -3.6924514}, //Sinesio Delgado estrechamiento
+        {lat: 40.474449, lng: -3.6909414}, //Sinesio Delgado 3 carriles
+        {lat: 40.4746582, lng: -3.6892631}, //Sinesio Delgado rotonda
+        {lat: 40.4741122, lng: -3.6870455}, //Sinesio Delgado con Castellana
+        {lat: 40.4659765, lng: -3.6893288},
+        {lat: 40.4462073, lng: -3.6912829}, //Nuevos Ministerios
+    ];
+    distritos.push(nuevosMinisterios);
+    console.log(distritos);
+    return distritos;
 }
 
 function initMap() {
@@ -33,13 +62,22 @@ function initMap() {
     });
     //Antes de pintar calcular los accidentes y establecer color
     let chamberiPinta = new google.maps.Polygon({
-        path: distritos,
+        path: distritos[0],
         geodesic: true,
         fillColor: '#FF0000',
         strokeColor: '#FF0000',
         strokeOpacity: 1.0,
         strokeWeight: 2
     });
+    let tetuanPinta = new google.maps.Polygon({
+        path: distritos[1],
+        geodesic: true,
+        fillColor: '#03AEB2',
+        strokeColor: '#03AEB2',
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+    })
     chamberiPinta.setMap(map);
+    tetuanPinta.setMap(map);
 }
 
