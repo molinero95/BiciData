@@ -11,7 +11,7 @@ function getDistricts(){
         {lat: 40.4277602, lng: -3.6957562}, //Alonso Martinez
         {lat: 40.4288781, lng: -3.7022974}, //Bilbao
         {lat: 40.4294542, lng: -3.7058214}, //San Bernardo
-        {lat: 40.4312285, lng: -3.7171189}, //Arguelles
+        {lat: 40.4306014, lng: -3.7161096}, //Arguelles
         {lat: 40.4330264, lng: -3.7180536}, //Princesa con Meléndez Valdés
         {lat: 40.4332535, lng: -3.7174267}, //Meléndez Valdés con Arcipreste de Hita
         {lat: 40.4346921, lng: -3.7183339}, //Arcipreste de Hita con Isaac Peral. MEJORAR AQUI
@@ -196,9 +196,51 @@ function getDistricts(){
         {lat: 40.4494838, lng: -3.5593996}, //A2
         {lat: 40.4501856, lng: -3.6003753},
         {lat: 40.4496326, lng: -3.6038393}, //A2 Av América
-
     ];
     distritos.push(sanBlas);
+
+    let centro = [
+        {lat: 40.4306014, lng: -3.7161096}, //Arguelles
+        {lat: 40.4294542, lng: -3.7058214}, //San Bernardo
+        {lat: 40.4288781, lng: -3.7022974}, //Bilbao
+        {lat: 40.4277602, lng: -3.6957562}, //Alonso Martinez
+        {lat: 40.4250743, lng: -3.6903732}, //Colón
+        {lat: 40.4193093, lng: -3.6930897}, //Cibeles
+        {lat: 40.4159491, lng: -3.6936636}, //Paseo del Prado
+        {lat: 40.4087139, lng: -3.6918902}, //Ronda de Atocha
+        {lat: 40.4074275, lng: -3.6935919}, //Plaza Emperador Carlos V
+        {lat: 40.4050011, lng: -3.7025703}, //Embajadores
+        {lat: 40.4066228, lng: -3.7116118}, //Puerta de Toledo
+        {lat: 40.4086596, lng: -3.7166561}, //Ronda de Segovia
+        {lat: 40.4110847, lng: -3.7181808}, //Ronda de Segovia con Algeciras
+        {lat: 40.413873, lng: -3.7168273}, //Calle de Segovia
+        {lat: 40.4139965, lng: -3.7229148}, //Puente de Segovia
+        {lat: 40.4188552, lng: -3.7218774}, //Puente del Rey
+        {lat: 40.4202194, lng: -3.7203753}, //Puerta de San Vicente
+        {lat: 40.4203823, lng: -3.7154629}, //Cuesta San Vicente
+        {lat: 40.4233857, lng: -3.7107993}, //Plaza Esp con Princesa
+    ];
+    distritos.push(centro);
+
+    let retiro = [
+        {lat: 40.4193093, lng: -3.6930897}, //Cibeles
+        {lat: 40.4217109, lng: -3.6795324}, //O'Donnell
+        {lat: 40.4211297, lng: -3.6688231}, //O'Donnell
+        {lat: 40.4186463, lng: -3.6586407}, //M-23 con M30
+        {lat: 40.4169901, lng: -3.6591449}, //M30
+        {lat: 40.4038193, lng: -3.6665423}, //M30
+        {lat: 40.3995837, lng: -3.6681328}, //M30
+        {lat: 40.3965811, lng: -3.6707012}, //M30
+        {lat: 40.3943726, lng: -3.6734035}, //M30 pico
+        {lat: 40.3968906, lng: -3.6743782},
+        {lat: 40.3990653, lng: -3.6766712}, //Dr Esquerdo
+        {lat: 40.4032161, lng: -3.684611}, //Antonio Nebrija
+        {lat: 40.4069832, lng: -3.6889347}, //Atocha
+        {lat: 40.4087139, lng: -3.6918902}, //Ronda de Atocha
+        {lat: 40.4159491, lng: -3.6936636}, //Paseo del Prado
+    ];
+    distritos.push(retiro);
+
     console.log(distritos);
     return distritos;
 }
@@ -264,6 +306,22 @@ function initMap() {
         geodesic: true,
         fillColor: '#FF0000',
         strokeColor: '#FF0000',
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+    }).setMap(map);
+    new google.maps.Polygon({   //Centro
+        path: distritos[7],
+        geodesic: true,
+        fillColor: '#FF0000',
+        strokeColor: '#FF0000',
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+    }).setMap(map);
+    new google.maps.Polygon({   //Retiro
+        path: distritos[8],
+        geodesic: true,
+        fillColor: '#03AEB2',
+        strokeColor: '#03AEB2',
         strokeOpacity: 1.0,
         strokeWeight: 2
     }).setMap(map);
