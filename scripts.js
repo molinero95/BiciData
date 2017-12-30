@@ -21,10 +21,11 @@ function getDistricts(){
         {lat: 40.4466871, lng: -3.7181462}, //Metropolitano
         {lat: 40.4455946, lng: -3.7146164}, //Moncloa con Reina Victoria
         {lat: 40.4469749, lng: -3.7093029}, //Reina Victoria curva
+        {lat: 40.4470462, lng: -3.7083913}, //Hospital Cruz Roja
         {lat: 40.4461822, lng: -3.6913631} //Vuelta
     ];
     distritos.push(chamberi);
-    let nuevosMinisterios = [
+    let tetuan = [
         {lat: 40.4462073, lng: -3.6912829}, //Nuevos Ministerios
         {lat: 40.4470462, lng: -3.7083913}, //Hospital Cruz Roja
         {lat: 40.4523766, lng: -3.7117199}, //Jefatura Superior de Policia Nacional
@@ -45,11 +46,11 @@ function getDistricts(){
         {lat: 40.4746939, lng: -3.6924514}, //Sinesio Delgado estrechamiento
         {lat: 40.474449, lng: -3.6909414}, //Sinesio Delgado 3 carriles
         {lat: 40.4746582, lng: -3.6892631}, //Sinesio Delgado rotonda
-        {lat: 40.4741122, lng: -3.6870455}, //Sinesio Delgado con Castellana
+        {lat: 40.4741825, lng: -3.6872829}, //Sinesio Delgado con Castellana
         {lat: 40.4659765, lng: -3.6893288}, //Plaza de Castilla
         {lat: 40.4462073, lng: -3.6912829}, //Nuevos Ministerios
     ];
-    distritos.push(nuevosMinisterios);
+    distritos.push(tetuan);
     
     let manoteras = [
         {lat: 40.48404, lng: -3.6734187}, //Nudo de Manoteras
@@ -240,6 +241,94 @@ function getDistricts(){
         {lat: 40.4159491, lng: -3.6936636}, //Paseo del Prado
     ];
     distritos.push(retiro);
+    let moncloaAravaca = [
+        {lat: 40.4233857, lng: -3.7107993}, //Plaza Esp con Princesa
+        {lat: 40.4306014, lng: -3.7161096}, //Arguelles
+        {lat: 40.4330264, lng: -3.7180536}, //Princesa con Meléndez Valdés
+        {lat: 40.4332535, lng: -3.7174267}, //Meléndez Valdés con Arcipreste de Hita
+        {lat: 40.4346921, lng: -3.7183339}, //Arcipreste de Hita con Isaac Peral. MEJORAR AQUI
+        {lat: 40.4395967, lng: -3.7175963}, //Plaza cristo rey
+        {lat: 40.4437752, lng: -3.7196728}, //Plaza Eugenio María de Hostos
+        {lat: 40.4449521, lng: -3.7198333}, //Plaza Marqués de comillas
+        {lat: 40.4466871, lng: -3.7181462}, //Metropolitano
+        {lat: 40.4455946, lng: -3.7146164}, //Moncloa con Reina Victoria
+        {lat: 40.4469749, lng: -3.7093029}, //Reina Victoria curva
+        {lat: 40.4470462, lng: -3.7083913}, //Hospital Cruz Roja
+        {lat: 40.4523766, lng: -3.7117199}, //Jefatura Superior de Policia Nacional
+        {lat: 40.4530123, lng: -3.7133721}, //Calle Numancia
+        {lat: 40.4538879, lng: -3.7127794}, //Calle Numancia con av Pablo Iglesias
+        {lat: 40.4551737, lng: -3.7131683}, //Curva Pablo Iglesias
+        {lat: 40.4622533, lng: -3.7083296}, //Ofelia Nieto
+        {lat: 40.4642287, lng: -3.7093381}, //Calle Villaamil
+        {lat: 40.4656905, lng: -3.7104368}, //Calle Villaamil rotonda
+        {lat: 40.4683599, lng: -3.7133185}, //Sinesio Delgado curva
+        {lat: 40.4694325, lng: -3.7139875},//Independencia de Saconia
+        {lat: 40.4728586, lng: -3.7283257}, //Glorieta de Isaac Ravin
+        {lat: 40.4725583, lng: -3.7324852}, //Av.de la Ilustración
+        {lat: 40.4736286, lng: -3.738002}, //Av.de la Ilustración
+        {lat: 40.4743656, lng: -3.741591}, //Av.de la Ilustración
+        {lat: 40.4744482, lng: -3.7479863},//Av.de la Ilustración
+        {lat: 40.4728465, lng: -3.7504133}, //M30
+        {lat: 40.4708969, lng: -3.7504779}, //M30
+        {lat: 40.4710457, lng: -3.7506805}, //M30 entrada
+        {lat: 40.47535, lng: -3.7517742},
+        {lat: 40.4788309, lng: -3.7512567}, //M40
+        {lat: 40.4779461, lng: -3.7530119}, //M40
+        {lat: 40.4743205, lng: -3.757128}, //M40
+        {lat: 40.4783573, lng: -3.7558058}, //rect raro
+        {lat: 40.4785551, lng: -3.7576938}, //El Pardo a la playa
+        {lat: 40.473512, lng: -3.7580501}, //M40
+        {lat: 40.4726378, lng: -3.7627308}, //M40
+        {lat: 40.4742813, lng: -3.77016}, //M40
+        {lat: 40.4747982, lng: -3.780836}, //M40
+        {lat: 40.4694224, lng: -3.7998794}, //Exteriores
+        {lat: 40.4794639, lng: -3.8364224}, //Exteriores
+        {lat: 40.4755462, lng: -3.8373028},
+        {lat: 40.4747898, lng: -3.8361185}, //Av victoria
+        {lat: 40.4709503, lng: -3.838051},
+        {lat: 40.467747, lng: -3.8381675}, //Arroyo de Valhondillo
+        {lat: 40.467747, lng: -3.8381675},
+        {lat: 40.467747, lng: -3.8381675},
+        {lat: 40.464321, lng: -3.8093719},
+        {lat: 40.4629632, lng: -3.8039476}, 
+        {lat: 40.4588374, lng: -3.7985389},
+        {lat: 40.4423581, lng: -3.7900403}, // Calle Suiza
+        {lat: 40.4442708, lng: -3.7842627},
+        {lat: 40.4440166, lng: -3.7706996}, //Cerro de las Covatillas
+        {lat: 40.429312, lng: -3.7707097},
+        {lat: 40.4241409, lng: -3.7790005},
+        {lat: 40.4174379, lng: -3.7814003},
+        {lat: 40.403925, lng: -3.7763113},
+        {lat: 40.4019908, lng: -3.7743216},
+        {lat: 40.4001211, lng: -3.774537}, //Anillo verde ciclista
+        {lat: 40.3995231, lng: -3.7702676}, //Anillo verde ciclista
+        {lat: 40.3989624, lng: -3.7649961}, //Paseo de Extremadura
+
+    ]
+    distritos.push(moncloaAravaca);
+
+    let fuencarralPardo = [
+        {lat: 40.4683599, lng: -3.7133185}, //Sinesio Delgado curva
+        {lat: 40.4709074, lng: -3.7117574}, //Sinesio Delgado curva
+        {lat: 40.4720276, lng: -3.7038315}, //Sinesio Delgado curva
+        {lat: 40.4748255, lng: -3.7006464}, //Sinesio Delgado curva
+        {lat: 40.4749609, lng: -3.6994624}, //Sinesio Delgado curva
+        {lat: 40.4744949, lng: -3.6974073}, //Sinesio Delgado curva
+        {lat: 40.4747362, lng: -3.6957706}, //Sinesio Delgado curva
+        {lat: 40.4744983, lng: -3.6940098}, //Sinesio Delgado curva
+        {lat: 40.4746939, lng: -3.6924514}, //Sinesio Delgado estrechamiento
+        {lat: 40.474449, lng: -3.6909414}, //Sinesio Delgado 3 carriles
+        {lat: 40.4746582, lng: -3.6892631}, //Sinesio Delgado rotonda
+        {lat: 40.4741825, lng: -3.6872829}, //Sinesio Delgado con Castellana
+        {lat: 40.4823998, lng: -3.6851719}, //M30
+        {lat: 40.4838292, lng: -3.6790864}, //M11
+        {lat: 40.48404, lng: -3.6734187}, //Nudo de Manoteras
+        {lat: 40.4909269, lng: -3.6717726}, //A1
+        {lat: 40.5039895, lng: -3.6583633}, //A1 via de servicio
+        {lat: 40.5110079, lng: -3.6580723}, //A1 giro
+        {lat: 40.5135211, lng: -3.655896}, //A1 salida
+        {lat: 40.5112442, lng: -3.6522417},//Rotonda camino del cura
+    ]
 
     console.log(distritos);
     return distritos;
@@ -319,6 +408,14 @@ function initMap() {
     }).setMap(map);
     new google.maps.Polygon({   //Retiro
         path: distritos[8],
+        geodesic: true,
+        fillColor: '#03AEB2',
+        strokeColor: '#03AEB2',
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+    }).setMap(map);
+    new google.maps.Polygon({   //Moncloa Aravaca
+        path: distritos[9],
         geodesic: true,
         fillColor: '#03AEB2',
         strokeColor: '#03AEB2',
