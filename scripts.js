@@ -353,6 +353,52 @@ function getDistricts(){
         {lat: 40.5039895, lng: -3.6583633}, //A1 via de servicio
         {lat: 40.5110079, lng: -3.6580723}, //A1 giro
         {lat: 40.5135211, lng: -3.655896}, //A1 salida
+        {lat: 40.51979, lng: -3.6867715}, //M40 con M607
+        {lat: 40.5395286, lng: -3.7053909}, //Este
+        {lat: 40.5653012, lng: -3.7162044}, //Este
+        {lat: 40.5725427, lng: -3.711463}, //Este llegando a trozo
+        {lat: 40.5785728, lng: -3.7093705},
+        {lat: 40.5786254, lng: -3.6984514}, //Tanatorio
+        {lat: 40.5922086, lng: -3.666665},
+        {lat: 40.5920679, lng: -3.6611745},
+        {lat: 40.5885904, lng: -3.6561301},
+        {lat: 40.5773115, lng: -3.6503956},
+        {lat: 40.5734708, lng: -3.6252178},
+        {lat: 40.5804269, lng: -3.6163362},
+        {lat: 40.5851443, lng: -3.6061451}, //Av de la Tribuna
+        {lat: 40.5885234, lng: -3.6044773},
+        {lat: 40.5923727, lng: -3.6016959}, //Av de Viñuelas
+        {lat: 40.5946725, lng: -3.6045693}, //Av de Viñuelas
+        {lat: 40.5957747, lng: -3.6046519}, //Av de Viñuelas
+        {lat: 40.5964538, lng: -3.6051172}, //Av de Viñuelas
+        {lat: 40.6015494, lng: -3.6160816}, //Av de Viñuelas
+        {lat: 40.6118762, lng: -3.6176724}, //Av de Viñuelas con Paseo del Embajador
+        {lat: 40.6161494, lng: -3.6227117}, //Paseo Cerro del Toro
+        {lat: 40.6178465, lng: -3.6282457},
+        {lat: 40.6276863, lng: -3.6297905},
+        {lat: 40.6380945, lng: -3.6379197},
+        {lat: 40.6383454, lng: -3.6440718},
+        {lat: 40.6435136, lng: -3.6557118}, //Arroyo de los Caños de la Parrilla
+        {lat: 40.6394461, lng: -3.6619574},
+        {lat: 40.6280472, lng: -3.6689311},
+        {lat: 40.6200643, lng: -3.6669249},
+        {lat: 40.616643, lng: -3.6747216},
+        {lat: 40.6109763, lng: -3.6801099},
+        {lat: 40.6066746, lng: -3.6877567}, //Carretera de Soto de Viñuelas
+        {lat: 40.5899706, lng: -3.6964128},
+        {lat: 40.5833388, lng: -3.7129708},
+        {lat: 40.586708, lng: -3.7380341},
+        {lat: 40.5905054, lng: -3.7406555}, 
+        {lat: 40.601858, lng: -3.7785095},
+        {lat: 40.5996168, lng: -3.8022619},
+        {lat: 40.603796, lng: -3.8009353}, //Carr Sierra
+        {lat: 40.6092828, lng: -3.8098756}, //Puente de la Marmota
+        {lat: 40.6078842, lng: -3.8128047},
+        {lat: 40.5996988, lng: -3.8063557}, //Carr Sierra
+        {lat: 40.5947957, lng: -3.815856},
+        {lat: 40.5937771, lng: -3.8320255},
+        {lat: 40.5915971, lng: -3.8372423},
+        
     ]
     distritos.push(fuencarralPardo);
 
@@ -520,6 +566,21 @@ function getDistricts(){
         {lat: 40.3669612, lng: -3.7617501}, //rotonda
         {lat: 40.3662213, lng: -3.7638735}, //Av de la Peseta
         {lat: 40.3598987, lng: -3.7709017}, //SurOeste
+        {lat: 40.3585918, lng: -3.7875427}, //Rotonda calle Oporto y calle de Beja
+        {lat: 40.3633803, lng: -3.8027417}, //Calle de Cáceres
+        {lat: 40.366496, lng: -3.807134}, //A5
+        {lat: 40.3639884, lng: -3.8104707}, //A5
+        {lat: 40.3963573, lng: -3.8349968}, //M501
+        {lat: 40.396409, lng: -3.8193472}, //NorOeste
+        {lat: 40.3920383, lng:-3.805778}, //Norte
+        {lat: 40.3920894, lng: -3.796454}, //Norte
+        {lat: 40.3935775, lng: -3.7935683}, //Arroyo de Meaques
+        {lat: 40.3938903, lng: -3.7891147}, //Arroyo de Meaques
+        {lat: 40.3923059, lng: -3.7892316},
+        {lat: 40.3940647, lng: -3.7812672}, //Centro de Salud Campamento
+        {lat: 40.4002489, lng: -3.7754057}, //Arroyo de Meaques
+        {lat: 40.4001211, lng: -3.774537}, //Anillo verde ciclista
+        {lat: 40.3995231, lng: -3.7702676}, //Anillo verde ciclista
     ]
     distritos.push(latina);
 
@@ -534,6 +595,7 @@ function initMap() {
         zoom: 12,
         center: madrid
     });
+    //let colors = getColors();
     //Antes de pintar calcular los accidentes y establecer color
     new google.maps.Polygon({   //Chamberí
         path: distritos[0],
