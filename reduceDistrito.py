@@ -4,7 +4,7 @@ previous = None
 sum = 0
 tot = 0
 ava = 0
-f = open('re.txt', 'w')
+f = open('total.txt', 'w')
 for line in sys.stdin:
 	
     key, value = line.split( '\t' )
@@ -22,15 +22,24 @@ for line in sys.stdin:
 print 'Accidentes:\t' + str( sum ) + '\t' + previous + '\n'
 f.write(str( sum ) + '\t' + previous + "\n")
 f.close()
-l = open('re.txt', 'r')
+l = open('total.txt', 'r')
+fd = open('output.txt', 'w')
 for line in l:
 	a, b = line.split( '\t' )
 	ava = float ( a ) / tot
 	a = ava * 100
 	print  'Average:\t' + str ( a ) + '\t%' + '\t' + b
-
+	fd.write(str( a ) + '\t' + b + "\n")
+	
+	
 	
 l.close()
+fd.close()    
+
+
+
+
+
     
 
 
