@@ -395,6 +395,10 @@ function getDistricts(){
         {lat: 40.6092828, lng: -3.8098756}, //Puente de la Marmota
         {lat: 40.6078842, lng: -3.8128047},
         {lat: 40.5996988, lng: -3.8063557}, //Carr Sierra
+        {lat: 40.5947957, lng: -3.815856},
+        {lat: 40.5937771, lng: -3.8320255},
+        {lat: 40.5915971, lng: -3.8372423},
+        
     ]
     distritos.push(fuencarralPardo);
 
