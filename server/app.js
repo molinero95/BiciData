@@ -1,9 +1,33 @@
+
 const express = require("express");//express
+const fs = require("fs");
+const cors = require("cors");//peticiones entre dominios dif
 
 const app = express();
+app.use(cors());
 
 app.get("/", (request, response) => {
     response.send("Hola mundo");
+});
+
+app.get("/accidentesDistrito", (request, response) => {
+    fs.readFile('./datos/accidentesDistrito.txt', (err, data) => {
+        let line = data.toString().split('\n');
+        let res = [];
+        line.forEach(elem =>{
+            let datos = elem.split('\t');
+            if(datos[1]){
+                let ob = {
+                    accidentes: datos[0],
+                    lugar: datos[1].trim(),
+                }
+                res.push(ob);
+            }
+            ob = new Object();
+        });
+        console.log(res);
+        response.json(res);
+    });
 });
 
 app.listen(3000, function (err) {
@@ -11,7 +35,7 @@ app.listen(3000, function (err) {
         console.log("No se ha podido iniciar el servidor.")
         console.log(err);
     } else {
-        console.log(`Servidor escuchando en puerto 80.`);
+        console.log(`Servidor escuchando en puerto 3000.`);
     }
 });
 
