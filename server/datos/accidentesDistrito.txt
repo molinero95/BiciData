@@ -1,0 +1,20 @@
+49	ARGANZUELA                    
+14	BARAJAS                       
+36	CARABANCHEL                   
+116	CENTRO                        
+23	CHAMARTIN                     
+46	CHAMBERI                      
+19	CIUDAD LINEAL                 
+32	FUENCARRAL-EL PARDO           
+28	HORTALEZA                     
+14	LATINA                        
+50	MONCLOA-ARAVACA               
+5	MORATALAZ                     
+19	PUENTE DE VALLECAS            
+48	RETIRO                        
+35	SALAMANCA                     
+30	SAN BLAS                      
+34	TETUAN                        
+16	USERA                         
+7	VICALVARO                     
+12	VILLA DE VALLECAS             
