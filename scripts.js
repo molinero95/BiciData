@@ -1,7 +1,7 @@
 $(() => {
     load();
 })
-
+let datos;
 function load(){
     $.ajax({
         url:"http://ec2-52-47-126-210.eu-west-3.compute.amazonaws.com/accidentesDistrito",
@@ -10,9 +10,7 @@ function load(){
             'Access-Control-Allow-Origin': '*'
         },
         success: function (data, textStatus, jqXHR) {
-            data.forEach(element => {
-                console.log(element);
-            });
+            initMap(data);
         },
         error: function (data, textStatus, jqXHR) {
             alert("Se ha producido un error: ");
@@ -20,6 +18,7 @@ function load(){
 
     });
 }
+
 
 //Meter en un JSON
 function getDistricts(){
@@ -607,17 +606,17 @@ function getDistricts(){
     ]
     distritos.push(latina);
 
-    console.log(distritos);
     return distritos;
 }
 
-function initMap() {
+function initMap(datos) {
     let distritos = getDistricts();
     var madrid = {lat: 40.416775, lng: -3.703790};
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
         center: madrid
     });
+    console.log(datos);
     //let colors = getColors();
     //Antes de pintar calcular los accidentes y establecer color
     new google.maps.Polygon({   //Chamberí
