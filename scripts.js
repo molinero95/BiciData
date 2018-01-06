@@ -1,11 +1,10 @@
 $(() => {
     load();
-    
 })
 
 function load(){
     $.ajax({
-        url:"http://ec2-52-47-144-7.eu-west-3.compute.amazonaws.com/accidentesDistrito",
+        url:"http://ec2-52-47-126-210.eu-west-3.compute.amazonaws.com/accidentesDistrito",
         type: "GET",
         headers: {
             'Access-Control-Allow-Origin': '*'
@@ -13,7 +12,7 @@ function load(){
         success: function (data, textStatus, jqXHR) {
             data.forEach(element => {
                 console.log(element);
-            });            
+            });
         },
         error: function (data, textStatus, jqXHR) {
             alert("Se ha producido un error: ");

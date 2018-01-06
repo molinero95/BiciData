@@ -12,12 +12,12 @@ app.get("/", (request, response) => {
 
 app.get("/accidentesDistrito", (request, response) => {
     fs.readFile('./datos/accidentesDistrito.txt', (err, data) => {
-        let line = data.toString().split('\n');
-        let res = [];
+        var line = data.toString().split('\n');
+        var res = [];
         line.forEach(elem =>{
-            let datos = elem.split('\t');
+            var datos = elem.split('\t');
             if(datos[1]){
-                let ob = {
+                var ob = {
                     accidentes: datos[0],
                     lugar: datos[1].trim(),
                 }
