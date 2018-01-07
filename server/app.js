@@ -4,13 +4,13 @@ const fs = require("fs");
 const https = require("https");
 const cors = require("cors");//peticiones entre dominios dif
 
+let privateKey = fs.readFileSync("./clave.pem");
+let cert = fs.readFileSync("./certificado_firmado.crt");
+
 let app = express();
+
+let server = https.createServer({ key: privateKey, cert: cert }, app);
 app.use(cors());
-
-let clavePriv = fs.readFileSync("./clave.pem");
-let certificado = fs.readFileSync("./certificado_firmado.crt");
-
-let servidor = https.createServer({ket: clavePriv, cert: certificado}, app);
 
 
 app.get("/", (request, response) => {
@@ -39,7 +39,7 @@ app.get("/accidentesDistrito", (request, response) => {
     });
 });
 
-servidor.listen(5000, function (err) {
+server.listen(5000, function (err) {
     if (err) {
         console.log("No se ha podido iniciar el servidor.")
         console.log(err);
