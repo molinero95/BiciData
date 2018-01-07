@@ -1,18 +1,13 @@
-$(()=>{
-    load();
-})
+
 
 
 let max = 0;
 
 function load(){
     $.ajax({
-        //url:"http://ec2-52-47-126-210.eu-west-3.compute.amazonaws.com/accidentesDistrito",
         url: "https://ec2-52-47-126-210.eu-west-3.compute.amazonaws.com/accidentesDistrito",
         type: "GET",
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        },
+        
         success: function (data, textStatus, jqXHR) {
             initMap(data);
         },
