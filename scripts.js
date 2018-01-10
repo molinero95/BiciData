@@ -1,5 +1,9 @@
 
 
+function muestraAccidentesFecha() {
+    alert("En proceso! En poco estará lista");
+}
+
 
 let max = 0;
 
