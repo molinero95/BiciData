@@ -14,12 +14,12 @@
 <body class="bg-light">
     <nav class="navbar navbar-inverse ">
         <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand">BiciData</a>
-                </div>
+            <div class="navbar-header">
+                <a class="navbar-brand">BiciData</a>
+            </div>
             <ul class="nav navbar-nav navbar-right">
                 <li class="active">
-                    <a>Accidentes por distrito</a>
+                    <a onclick="muestraAccidentesDistrito()">Accidentes por distrito</a>
                 </li>
                 <li>
                     <a onclick="muestraAccidentesFecha()">Accidentes por fecha</a>
@@ -30,13 +30,41 @@
             </ul>
         </div>
     </nav>
-    <!--
-        <div class="container text-center">
-            <button id="accidentesBtn"  onclick="muestraAccidentesBarrio()" class="btn-primary btn">Mostrar Accidentes</button>
-            <button id="fechasBtn" class="btn-primary btn">Mostrar Fechas</button>
-        </div>
-        -->
     <hr>
+    <table id="fechas" class="table table-responsive">
+        <thead>
+            <tr>
+                <th scope="col">Enero</th>
+                <th scope="col">Febrero</th>
+                <th scope="col">Marzo</th>
+                <th scope="col">Abril</th>
+                <th scope="col">Mayo</th>
+                <th scope="col">Junio</th>
+                <th scope="col">Julio</th>
+                <th scope="col">Agosto</th>
+                <th scope="col">Septiembre</th>
+                <th scope="col">Octubre</th>
+                <th scope="col">Noviembre</th>
+                <th scope="col">Diciembre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="enero"></td>
+                <td id="febrero"></td>
+                <td id="marzo"></td>
+                <td id="abril"></td>
+                <td id="mayo"></td>
+                <td id="junio"></td>
+                <td id="julio"></td>
+                <td id="agosto"></td>
+                <td id="septiembre"></td>
+                <td id="octubre"></td>
+                <td id="noviembre"></td>
+                <td id="diciembre">Sin datos aún</td>
+            </tr>
+        </tbody>
+    </table>
     <div id="map" class="container">
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLcHPb0jtpNFs83fZobeJ0HZUCFc-0w_s&callback=load"></script>
     </div>

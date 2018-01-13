@@ -1,4 +1,3 @@
 node_modules
-certificado.csr
-certificado_firmado.crt
 clave.pem
+certificado_firmado.crt

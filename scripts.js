@@ -1,13 +1,57 @@
+function showFechas() {
+    $("#fechas").show();
+}
+function hideFechas() {
+    $("#fechas").hide();
+}
+function showMap(){
+    $("#map").show();
+}
+function hideMap(){
+    $("#map").hide();
+}
 
 
 function muestraAccidentesFecha() {
-    alert("En proceso! En poco estará lista");
+    hideMap();
+    showFechas();
+    $.ajax({
+        url: "https://ec2-52-47-87-168.eu-west-3.compute.amazonaws.com/accidentesFecha",
+        type: "GET",
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        },
+        success: function (data, textStatus, jqXHR) {
+            if(data[0]) $("#enero").text(data[0].accidentes);
+            if(data[1]) $("#febrero").text(data[1].accidentes);
+            if(data[2]) $("#marzo").text(data[2].accidentes);
+            if(data[3]) $("#abril").text(data[3].accidentes);
+            if(data[4]) $("#mayo").text(data[4].accidentes);
+            if(data[5]) $("#junio").text(data[5].accidentes);
+            if(data[6]) $("#julio").text(data[6].accidentes);
+            if(data[7]) $("#agosto").text(data[7].accidentes);
+            if(data[8]) $("#septiembre").text(data[8].accidentes);
+            if(data[9]) $("#octubre").text(data[9].accidentes);
+            if(data[10]) $("#noviembre").text(data[10].accidentes);
+            if(data[11]) $("#diciembre").text(data[11].accidentes);
+            getMax(data);
+
+        },
+        error: function (data, textStatus, jqXHR) {
+            alert("Se ha producido un error: ");
+        }
+    });
 }
 
+function muestraAccidentesDistrito(){
+    showMap();
+    hideFechas();
+}
 
 let max = 0;
 
 function load(){
+    hideFechas();
     $.ajax({
         url: "https://ec2-52-47-87-168.eu-west-3.compute.amazonaws.com/accidentesDistrito",
         type: "GET",
@@ -729,7 +773,6 @@ function initMap(datos) {
 function setArray(datos) {
     let res = new Object();
     datos.forEach(elem => {
-        console.log(elem.accidentes);
         if(Number(elem.accidentes) > max) 
             max = Number(elem.accidentes);
         res[elem.lugar.toLowerCase()] = elem.accidentes;

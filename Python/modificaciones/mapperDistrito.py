@@ -3,6 +3,8 @@ import csv
 sum = 0
 
 with open('accidentes.csv') as csvfile:
-   spamreader = csv.DictReader(csvfile, delimiter=';',  quoting=csv.QUOTE_ALL)
-   for row in spamreader:
-         print (row['DISTRITO'] + "\t1")
+	spamreader = csv.reader(csvfile)
+	for row in spamreader:
+		row = row[0].split(";")
+		print (row[3] + "\t1")
+		#print(row)
