@@ -34,7 +34,25 @@ app.get("/accidentesDistrito", (request, response) => {
             }
             ob = new Object();
         });
-        console.log(res);
+        response.json(res);
+    });
+});
+
+app.get("/accidentesFecha", (request, response) => {
+    fs.readFile('./datos/accidentesFecha.txt', (err, data) => {
+        var line = data.toString().split('\n');
+        var res = [];
+        line.forEach(elem =>{
+            var datos = elem.split('\t');
+            if(datos[1]){
+                var ob = {
+                    mes: datos[0].trim(),
+                    accidentes: datos[1],
+                }
+                res.push(ob);
+            }
+            ob = new Object();
+        });
         response.json(res);
     });
 });
