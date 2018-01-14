@@ -2,4 +2,13 @@
 #map {
     height: 500px;
     width: 1000px;
+    max-width: 100%;
+    height: auto;
+}
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:60.25%;
+    position:relative;
+    
 }
