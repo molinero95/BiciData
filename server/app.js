@@ -57,8 +57,8 @@ app.get("/accidentesFecha", (request, response) => {
     });
 });
 
-app.get("/accidentesDistritosFechas", (request, response) => {
-    fs.readFile('./datos/accidentesDistritosFechas.txt', (err, data) => {
+app.get("/accidentesDistritosHoras", (request, response) => {
+    fs.readFile('./datos/accidentesDistritosHoras.txt', (err, data) => {
         var line = data.toString().split('\n');
         var res = [];
         line.forEach(elem =>{
