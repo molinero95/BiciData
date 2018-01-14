@@ -48,9 +48,13 @@ function muestraAccidentesDistrito(){
     hideFechas();
 }
 
+function muestraAccidentesDistritosFecha(){
+
+}
+
 let max = 0;
 
-function load(){
+function load(){//Es la primera funcion que se llama
     hideFechas();
     $.ajax({
         url: "https://ec2-52-47-87-168.eu-west-3.compute.amazonaws.com/accidentesDistrito",
@@ -60,6 +64,22 @@ function load(){
         },
         success: function (data, textStatus, jqXHR) {
             initMap(data);
+        },
+        error: function (data, textStatus, jqXHR) {
+            alert("Se ha producido un error: ");
+        }
+    });
+}
+
+function loadDates() {
+    $.ajax({
+        url: "https://ec2-52-47-87-168.eu-west-3.compute.amazonaws.com/accidentesDistritosFechas",
+        type: "GET",
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        },
+        success: function (data, textStatus, jqXHR) {
+            initMapFechas(data);
         },
         error: function (data, textStatus, jqXHR) {
             alert("Se ha producido un error: ");
@@ -628,8 +648,17 @@ function initMap(datos) {
         zoom: 12,
         center: madrid
     });
-    let accidentes = setArray(datos);
-    let colors = setColors(datos);
+    console.log(datos);
+    let accidentes;
+    let colors;
+    if(datos[0].hora){
+        let selected;
+
+    }
+    else{
+        accidentes = setArray(datos);
+        colors = setColors(datos);
+    }
     //Antes de pintar calcular los accidentes y establecer color
     new google.maps.Polygon({   //Chamberí
         path: distritos["chamberi"],
@@ -768,7 +797,6 @@ function initMap(datos) {
         strokeWeight: 2
     }).setMap(map);
 }
-
 
 function setArray(datos) {
     let res = new Object();
