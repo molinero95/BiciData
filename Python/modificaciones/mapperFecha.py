@@ -2,11 +2,9 @@ import csv
 
 
 with open('accidentes.csv') as csvfile:
-	spamreader = csv.reader(csvfile, delimiter=';',  quoting=csv.QUOTE_ALL)
-
+	spamreader = csv.reader(csvfile)
 	for row in spamreader:
-		fecha = row[0].split(' ')
-		if("/" in fecha[0]):
-			fecha = fecha[0].split("/")
-			mes = fecha[1]
-			print (mes + "\t1")
+		linea = row[0].split(";")
+		fecha= linea[0].split(' ')
+		if len(fecha) == 2:
+			print (fecha[0] + "\t1")
