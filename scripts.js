@@ -3,6 +3,12 @@ let max = 0;
 let datosHoras;
 let datosDistr;
 
+$(()=>{
+    $("#setHoraBtn").on("click", function(){
+        muestraAccidentesDistritosHora();
+    })
+})
+
 function setInactive(){
     $("ul > li").removeClass("active")
 }
@@ -19,10 +25,10 @@ function hideMap() {
     $("#map").hide();
 }
 function showSelector(){
-    $("select").show();
+    $("#select").show();
 }
 function hideSelector(){
-    $("select").hide();
+    $("#select").hide();
 }
 
 
@@ -915,7 +921,6 @@ function setColors(datos) {
     });
     return res;
 }
-
 
 
 function set00() {
