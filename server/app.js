@@ -57,6 +57,27 @@ app.get("/accidentesFecha", (request, response) => {
     });
 });
 
+app.get("/accidentesDistritosFechas", (request, response) => {
+    fs.readFile('./datos/accidentesDistritosFechas.txt', (err, data) => {
+        var line = data.toString().split('\n');
+        var res = [];
+        line.forEach(elem =>{
+            var datos = elem.split('\t');
+            if(datos[1]){
+                var ob = {
+		    lugar: datos[0].trim(),
+                    accidentes: datos[1],
+                    hora: datos[2].trim(),
+                }
+                res.push(ob);
+            }
+            ob = new Object();
+        });
+        response.json(res);
+    });
+});
+
+
 server.listen(5000, function (err) {
     if (err) {
         console.log("No se ha podido iniciar el servidor.")
