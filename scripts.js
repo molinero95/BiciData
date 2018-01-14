@@ -1039,3 +1039,8 @@ function set23() {
     initMap(datosHoras);
 }
 
+$("#00").on("touchstart click", function(){
+    hora = "00:00";
+    max = 0;
+    initMap(datosHoras);
+});
